@@ -1,5 +1,10 @@
-<h1>Search Results</h1>
-
-<% @students.each do |student| %>
-  <%= render partial: 'student', locals: {student: student} %>
+<%= form_tag "/students", method: "get" do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Find Students by Name" %>
 <% end %>
+
+<ul>
+  <% @students.each do |student| %>
+  <%= render partial: "student", locals: {student: student} %> <br>
+  <% end %>
+</ul>
