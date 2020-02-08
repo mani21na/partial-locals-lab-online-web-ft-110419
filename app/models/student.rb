@@ -18,4 +18,3 @@ class Student < ActiveRecord::Base
     self.all.where("name like ?",'%'+text+'%')
   end
 end
-end
