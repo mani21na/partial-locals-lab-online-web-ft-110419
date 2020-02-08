@@ -21,6 +21,7 @@ class StudentsController < ApplicationController
   end
 
   def index
+    binding.pry
     if params[:query] != ""
       @students = Student.search(params[:query])
     else
