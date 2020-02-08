@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     if params[:query] != ""
+      @students = Student.search(params[:query])
     @students = Student.all
   end
 
